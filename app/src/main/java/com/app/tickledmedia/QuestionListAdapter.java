@@ -2,6 +2,7 @@ package com.app.tickledmedia;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,6 +82,9 @@ holder.frame=(FrameLayout)convertView.findViewById(R.id.frameL);
             @Override
             public void onClick(View v) {
 
+                Integer tag=(Integer)v.getTag();
+
+               // ((MainActivity) context).replaceFragmentInContainer();
             }
         });
         //holder.comments.setText(questions.comments.get(position).message.toString());

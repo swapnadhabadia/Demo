@@ -32,10 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void replaceFragmentInContainer(FragmentManager fragmentManager, String tag, QuestionFragment fragment) {
+     void replaceFragmentInContainer(FragmentManager fragmentManager, String tag, Fragment fragment) {
         fragmentManager.beginTransaction()
                 .replace(R.id.homeContainer, fragment, tag)
                 .commit();
 
     }
+
+
 }

@@ -54,9 +54,9 @@ this.context=context;
                     public void onErrorResponse(VolleyError error) {
 
                         if (error.networkResponse == null) {
-                           // homeFragmentPresenterInterface.showUnableToReachServerErrorLayout();
+
                         }
-                        //Log.e(TAG, "onErrorResponse() called with: " + "error = [" + error.getMessage() + "]");
+
                     }
                 });
                 APIRequest request = builder.build();
