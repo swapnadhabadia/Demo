@@ -1,5 +1,5 @@
 
-package com.app.tickledmedia;
+package com.app.tickledmedia.networking;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,6 +12,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.app.tickledmedia.BuildConfig;
 
 import java.util.Iterator;
 import java.util.Map;

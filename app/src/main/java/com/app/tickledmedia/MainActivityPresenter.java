@@ -2,11 +2,12 @@ package com.app.tickledmedia;
 
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
+
+import com.app.tickledmedia.models.Response;
 
 import java.util.List;
 
-class MainActivityPresenter  {
+public class MainActivityPresenter  {
     private final MainInterface mainInterface;
     Context context;
     private final MainActivityInteractor mainActivityInteractor;

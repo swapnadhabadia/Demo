@@ -1,4 +1,4 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.views;
 
 
 
@@ -14,13 +14,19 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.app.tickledmedia.MainActivityPresenter;
+import com.app.tickledmedia.MainInterface;
+import com.app.tickledmedia.views.QuestionListAdapter;
+import com.app.tickledmedia.R;
+import com.app.tickledmedia.models.Response;
+
 import java.util.List;
 
 /**
  * Created by SappiKaran on 24/02/18.
  */
 
-public class AnswerFragment extends Fragment implements MainInterface  {
+public class AnswerFragment extends Fragment implements MainInterface {
     public static final String TAG ="answer" ;
 
 

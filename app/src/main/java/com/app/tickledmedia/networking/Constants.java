@@ -1,4 +1,4 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.networking;
 
 /**
  * Created by swapna on 4/3/17.

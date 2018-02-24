@@ -1,11 +1,12 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.models;
 
 /**
  * Created by SappiKaran on 24/02/18.
  */
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,17 +15,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder({
-        "status",
+        "id",
+        "user_id",
         "message",
-        "response"
+        "image",
+        "comments"
 })
+public class Response {
 
-class QuestionList {
-
-    @JsonProperty("status")
-    public Boolean status;
+    @JsonProperty("id")
+    public Integer id;
+    @JsonProperty("user_id")
+    public Integer userId;
     @JsonProperty("message")
     public String message;
-    @JsonProperty("response")
-    public List<Response> response = new ArrayList<Response>();
+    @JsonProperty("image")
+    public String image;
+    @JsonProperty("comments")
+    public List<Comment> comments = new ArrayList<Comment>();
+
 }

@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.app.tickledmedia.views.QuestionFragment;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-     void replaceFragmentInContainer(String tag, Fragment fragment) {
+     public void replaceFragmentInContainer(String tag, Fragment fragment) {
          FragmentManager fragmentManager = getSupportFragmentManager();
          if(tag.equals("answer"))
          {

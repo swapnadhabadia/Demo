@@ -1,4 +1,4 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.networking;
 
 import android.content.Context;
 import android.content.pm.PackageManager;

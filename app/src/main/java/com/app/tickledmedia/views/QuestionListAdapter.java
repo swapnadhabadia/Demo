@@ -1,8 +1,7 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.views;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +10,19 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.app.tickledmedia.BaseApplication;
+import com.app.tickledmedia.MainActivity;
+import com.app.tickledmedia.R;
+import com.app.tickledmedia.models.Response;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by SappiKaran on 24/02/18.
  */
 
-class QuestionListAdapter extends BaseAdapter {
+public class QuestionListAdapter extends BaseAdapter {
 
 
      final Context context;
