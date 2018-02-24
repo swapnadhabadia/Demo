@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
+android:id="@+id/frameL"
     android:descendantFocusability="beforeDescendants">
 
     <LinearLayout
@@ -19,12 +20,36 @@
         android:descendantFocusability="afterDescendants">
 
         <TextView
-            android:id="@+id/line1"
+            android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Text line 1"/>
 
+        <TextView
+            android:id="@+id/userId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text line 1"/>
 
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text line 1"/>
+        <TextView
+            android:id="@+id/comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text line 1"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"/>
 
     </LinearLayout>
 </FrameLayout>

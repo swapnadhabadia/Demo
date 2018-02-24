@@ -28,4 +28,18 @@ this.mainInterface=mainInterface;
     public void getQuesList(List<Response> response) {
         mainInterface.getQuestionList(response);
     }
+
+
+    public void showProgressDialog(String message, boolean indeterminate, boolean isCancelable) {
+        if (mainInterface != null) {
+            mainInterface.showProgressDialog(message, indeterminate, isCancelable);
+        }
+    }
+
+
+    public void hideProgressDialog() {
+        if (mainInterface != null) {
+            mainInterface.hideProgressDialog();
+        }
+    }
 }

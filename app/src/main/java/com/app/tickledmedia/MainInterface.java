@@ -10,4 +10,8 @@ public interface MainInterface {
 
 
     void getQuestionList(List<Response> response);
+
+    void showProgressDialog(String message, boolean indeterminate, boolean isCancelable);
+
+    void hideProgressDialog();
 }

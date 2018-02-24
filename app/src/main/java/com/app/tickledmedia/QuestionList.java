@@ -3,6 +3,7 @@ package com.app.tickledmedia;
 /**
  * Created by SappiKaran on 24/02/18.
  */
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -25,5 +26,5 @@ class QuestionList {
     @JsonProperty("message")
     public String message;
     @JsonProperty("response")
-    public List<Response> response = null;
+    public List<Response> response = new ArrayList<Response>();
 }

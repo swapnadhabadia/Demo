@@ -1,11 +1,16 @@
 package com.app.tickledmedia;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +25,11 @@ class QuestionListAdapter extends BaseAdapter {
      final Context context;
      final List<Response> items;
 
-
+    ImageLoader imageLoader;
     public QuestionListAdapter(Context context, List<Response> items) {
         this.context = context;
         this.items = items;
+        imageLoader = BaseApplication.getImageLoader();
     }
 
     @Override
@@ -41,24 +47,57 @@ class QuestionListAdapter extends BaseAdapter {
         return position;
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).
-                    inflate(R.layout.list_item, parent, false);
-        }
-
-        // get current item to be displayed
+        ViewHolder holder = null;
         Response questions = (Response) getItem(position);
 
-        // get the TextView for item name and item description
-        TextView textViewItemName = (TextView)
-                convertView.findViewById(R.id.line1);
+        LayoutInflater mInflater = (LayoutInflater)
+                context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        if (convertView == null) {
+            convertView = mInflater.inflate(R.layout.list_item, null);
 
-        //sets the text for item name and item description from the current item object
-        textViewItemName.setText(questions.message);
+            holder = new ViewHolder();
+holder.frame=(FrameLayout)convertView.findViewById(R.id.frameL);
+            holder.listOfImage = (ImageView) convertView.findViewById(R.id.image);
+            holder.mId=(TextView)convertView.findViewById(R.id.id);
+            holder.mUid=(TextView)convertView.findViewById(R.id.userId);
+            holder.message=(TextView)convertView.findViewById(R.id.message);
+            holder.comments=(TextView)convertView.findViewById(R.id.comments);
+            convertView.setTag(holder);
+        }
+        else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-        // returns the view for the current row
+
+        imageLoader.displayImage(questions.image,holder.listOfImage);
+        holder.mId.setText(questions.id.toString());
+        holder.mUid.setText(questions.userId.toString());
+        holder.message.setText(questions.message.toString());
+
+        holder.frame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        //holder.comments.setText(questions.comments.get(position).message.toString());
         return convertView;
+
+
     }
+
+    private class ViewHolder {
+        ImageView listOfImage;
+
+        TextView mId;
+        TextView mUid;
+        TextView message;
+        TextView comments;
+         FrameLayout frame;
+    }
+
+
 }

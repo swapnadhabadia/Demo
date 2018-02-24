@@ -30,7 +30,7 @@ this.context=context;
         try {
 
             Log.i(TAG, "callNetworkListApi: "+ "interactor");
-
+            mainActivityPresenter.showProgressDialog(context.getResources().getString(R.string.loading), true, false);
            /* if (Connectivity.isConnected(context)) {*/
               final  APIRequest.Builder<QuestionList> builder = new APIRequest.Builder<>(context, Request.Method.GET,
                         QuestionList.class, URLConstants.BASE_URL,
@@ -43,6 +43,7 @@ this.context=context;
                                         /*if (response.message="success") {*/
                                             Log.i(TAG, "callNetworkListApi: "+response.response);
                                             mainActivityPresenter.getQuesList(response.response);
+                                        mainActivityPresenter.hideProgressDialog();
                                        /* }*/
                                     }
                                 }

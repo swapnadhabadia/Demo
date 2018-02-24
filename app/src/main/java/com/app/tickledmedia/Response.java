@@ -4,6 +4,7 @@ package com.app.tickledmedia;
  * Created by SappiKaran on 24/02/18.
  */
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -31,6 +32,6 @@ public class Response {
     @JsonProperty("image")
     public String image;
     @JsonProperty("comments")
-    public List<Comment> comments = null;
+    public List<Comment> comments = new ArrayList<Comment>();
 
 }
