@@ -1,4 +1,4 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.apicalls;
 
 
 import android.content.Context;

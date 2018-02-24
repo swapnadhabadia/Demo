@@ -5,14 +5,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.app.tickledmedia.apicalls.MainActivityPresenter;
 import com.app.tickledmedia.views.QuestionFragment;
 
 public class MainActivity extends AppCompatActivity {
-
-
-    private MainActivityPresenter mainActivityPresenter;
-    private String question;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
         replaceFragmentInContainer(QuestionFragment.TAG, QuestionFragment.newInstance());
     }
-
-    
-
-
 
      public void replaceFragmentInContainer(String tag, Fragment fragment) {
          FragmentManager fragmentManager = getSupportFragmentManager();

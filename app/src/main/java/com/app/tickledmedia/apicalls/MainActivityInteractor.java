@@ -1,4 +1,4 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.apicalls;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,14 +7,12 @@ import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.app.tickledmedia.R;
 import com.app.tickledmedia.models.QuestionList;
 import com.app.tickledmedia.networking.APIRequest;
 import com.app.tickledmedia.networking.VolleyUtil;
 
 
-/**
- * Created by SappiKaran on 24/02/18.
- */
 
 class MainActivityInteractor {
     private final MainActivityPresenter mainActivityPresenter;
@@ -77,7 +75,7 @@ this.context=context;
                 DialogUtil.showNoNetworkAlert(context);
             }*/
         } catch (Exception e) {
-            //Log.e(TAG, e.toString());
+
         }
 
     }

@@ -11,16 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.app.tickledmedia.MainActivityPresenter;
-import com.app.tickledmedia.MainInterface;
+import com.app.tickledmedia.apicalls.MainActivityPresenter;
+import com.app.tickledmedia.apicalls.MainInterface;
 import com.app.tickledmedia.R;
 import com.app.tickledmedia.models.Response;
 
 import java.util.List;
 
-/**
- * Created by SappiKaran on 24/02/18.
- */
 
 public class QuestionFragment extends Fragment implements MainInterface {
     public static final String TAG ="" ;

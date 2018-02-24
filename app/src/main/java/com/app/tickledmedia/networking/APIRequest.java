@@ -22,9 +22,6 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by swapna on 4/3/17.
- */
 
 public class APIRequest<T> extends JsonRequest<T> implements Constants.HeaderKeys, Constants.AppConstants {
 

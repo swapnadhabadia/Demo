@@ -18,9 +18,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-/**
- * Created by SappiKaran on 24/02/18.
- */
+
 
 public class QuestionListAdapter extends BaseAdapter {
 
@@ -84,18 +82,26 @@ holder.frame=(FrameLayout)convertView.findViewById(R.id.frameL);
         holder.mUid.setText(questions.userId.toString());
         holder.message.setText(questions.message.toString());
 
-question= questions.message;
+        question= questions.message;
 
-        holder.frame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if(type.equals("answer"))
+        {
 
-           //     Integer tag=(Integer)v.getTag();
+        }
+        else
+        {
+            holder.frame.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-              ((MainActivity) context).replaceFragmentInContainer(AnswerFragment.TAG, AnswerFragment.newInstance(question));
-            }
-        });
-        //holder.comments.setText(questions.comments.get(position).message.toString());
+                    //     Integer tag=(Integer)v.getTag();
+
+                    ((MainActivity) context).replaceFragmentInContainer(AnswerFragment.TAG, AnswerFragment.newInstance(question));
+                }
+            });
+        }
+
+
         return convertView;
 
 

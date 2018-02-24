@@ -1,12 +1,9 @@
-package com.app.tickledmedia;
+package com.app.tickledmedia.apicalls;
 
 import com.app.tickledmedia.models.Response;
 
 import java.util.List;
 
-/**
- * Created by SappiKaran on 24/02/18.
- */
 
 public interface MainInterface {
 
