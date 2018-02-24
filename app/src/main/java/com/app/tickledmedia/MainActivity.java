@@ -20,21 +20,32 @@ public class MainActivity extends AppCompatActivity {
 
      public void replaceFragmentInContainer(String tag, Fragment fragment) {
          FragmentManager fragmentManager = getSupportFragmentManager();
+
+
+
          if(tag.equals("answer"))
          {
              fragmentManager.beginTransaction()
                      .replace(R.id.homeContainer, fragment, tag)
+                     .addToBackStack(fragment.getClass().getName())
                      .commit();
          }
          else
          {
              fragmentManager.beginTransaction()
                      .replace(R.id.homeContainer, fragment, tag)
+                     .addToBackStack(fragment.getClass().getName())
                      .commit();
          }
 
-
     }
 
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1)
+            getSupportFragmentManager().popBackStack();
+        else
+            finish();
+    }
 
 }

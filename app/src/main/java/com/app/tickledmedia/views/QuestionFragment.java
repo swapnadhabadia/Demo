@@ -42,7 +42,7 @@ public class QuestionFragment extends Fragment implements MainInterface {
 
     @Override
     public void getQuestionList(List<Response> response, String type) {
-        QuestionListAdapter adapter = new QuestionListAdapter(getActivity(), response,"answer");
+        QuestionListAdapter adapter = new QuestionListAdapter(getActivity(), response,"ques");
         mListView.setAdapter(adapter);
 
     }

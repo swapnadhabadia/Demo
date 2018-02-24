@@ -84,22 +84,25 @@ holder.frame=(FrameLayout)convertView.findViewById(R.id.frameL);
 
         question= questions.message;
 
-        if(type.equals("answer"))
-        {
 
-        }
-        else
-        {
             holder.frame.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     //     Integer tag=(Integer)v.getTag();
 
-                    ((MainActivity) context).replaceFragmentInContainer(AnswerFragment.TAG, AnswerFragment.newInstance(question));
+                    if(type.equals("answer"))
+                    {
+
+                    }
+                    else
+                    {
+                        ((MainActivity) context).replaceFragmentInContainer(AnswerFragment.TAG, AnswerFragment.newInstance(question));
+
+                    }
                 }
             });
-        }
+
 
 
         return convertView;
