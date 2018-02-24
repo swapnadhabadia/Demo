@@ -40,10 +40,10 @@ this.context=context;
 
                                 if (response != null) {
                                     if (response.status== true) {
-                                        if (response.message=="success") {
+                                        /*if (response.message="success") {*/
                                             Log.i(TAG, "callNetworkListApi: "+response.response);
                                             mainActivityPresenter.getQuesList(response.response);
-                                        }
+                                       /* }*/
                                     }
                                 }
                             }

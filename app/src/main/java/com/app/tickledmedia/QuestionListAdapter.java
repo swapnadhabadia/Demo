@@ -49,7 +49,7 @@ class QuestionListAdapter extends BaseAdapter {
         }
 
         // get current item to be displayed
-        QuestionList questions = (QuestionList) getItem(position);
+        Response questions = (Response) getItem(position);
 
         // get the TextView for item name and item description
         TextView textViewItemName = (TextView)
