@@ -25,26 +25,35 @@ this.context=context;
 
     }
 
-    public void callNetworkListApi(final Context con, String tag) {
+    public void callNetworkListApi(final Context con, final String answer, String tag) {
 
         try {
 
             Log.i(TAG, "callNetworkListApi: "+ "interactor");
             mainActivityPresenter.showProgressDialog(context.getResources().getString(R.string.loading), true, false);
+            String BASE_URL;
+            if(answer.equals("answer"))
+            {
+                 BASE_URL = "https://api.myjson.com/bins/19i7wt";
+            }
+            else
+            {
+                BASE_URL = "https://api.myjson.com/bins/vt8zx";
+            }
            /* if (Connectivity.isConnected(context)) {*/
               final  APIRequest.Builder<QuestionList> builder = new APIRequest.Builder<>(context, Request.Method.GET,
-                        QuestionList.class, URLConstants.BASE_URL,
+                        QuestionList.class, BASE_URL,
                         new Response.Listener<QuestionList>() {
                             @Override
                             public void onResponse(QuestionList response) {
 
                                 if (response != null) {
                                     if (response.status== true) {
-                                        /*if (response.message="success") {*/
+                                        if (response.message.equals("success")) {
                                             Log.i(TAG, "callNetworkListApi: "+response.response);
-                                            mainActivityPresenter.getQuesList(response.response);
+                                            mainActivityPresenter.getQuesList(response.response,answer);
                                         mainActivityPresenter.hideProgressDialog();
-                                       /* }*/
+                                        }
                                     }
                                 }
                             }

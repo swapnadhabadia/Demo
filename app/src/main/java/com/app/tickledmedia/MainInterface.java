@@ -9,7 +9,7 @@ import java.util.List;
 public interface MainInterface {
 
 
-    void getQuestionList(List<Response> response);
+    void getQuestionList(List<Response> response, String type);
 
     void showProgressDialog(String message, boolean indeterminate, boolean isCancelable);
 

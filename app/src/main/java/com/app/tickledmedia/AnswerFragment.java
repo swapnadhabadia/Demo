@@ -1,5 +1,7 @@
 package com.app.tickledmedia;
 
+
+
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -17,8 +20,8 @@ import java.util.List;
  * Created by SappiKaran on 24/02/18.
  */
 
-public class QuestionFragment extends Fragment implements MainInterface  {
-    public static final String TAG ="" ;
+public class AnswerFragment extends Fragment implements MainInterface  {
+    public static final String TAG ="answer" ;
 
 
     private MainActivityPresenter mainActivityPresenter;
@@ -26,21 +29,30 @@ public class QuestionFragment extends Fragment implements MainInterface  {
     private View mQuestionListView;
     private ContentLoadingProgressBar mProgressBar;
     private ProgressDialog progressDialog;
+    private TextView mquestion;
+    private String question;
 
 
-    public static QuestionFragment newInstance() {
-        QuestionFragment fragment = new QuestionFragment();
+    public static AnswerFragment newInstance(String question) {
+        AnswerFragment fragment = new AnswerFragment();
         Bundle args = new Bundle();
-
+        args.putString("answer", question);
         fragment.setArguments(args);
         return fragment;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            question = getArguments().getString("answer");
 
+        }
+    }
 
     @Override
     public void getQuestionList(List<Response> response, String type) {
-        QuestionListAdapter adapter = new QuestionListAdapter(getActivity(), response,"answer");
+        QuestionListAdapter adapter = new QuestionListAdapter(getActivity(), response, "answer");
         mListView.setAdapter(adapter);
 
     }
@@ -65,14 +77,17 @@ public class QuestionFragment extends Fragment implements MainInterface  {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       // return super.onCreateView(inflater, container, savedInstanceState);
+        // return super.onCreateView(inflater, container, savedInstanceState);
 
         mQuestionListView = inflater.inflate(R.layout.list_question, container, false);
         mListView = (ListView) mQuestionListView.findViewById(R.id.card_listView);
+        mquestion=(TextView)mQuestionListView.findViewById(R.id.ques);
+        mquestion.setVisibility(View.VISIBLE);
+        mquestion.setText(question);
         progressDialog = new ProgressDialog(getActivity());
         mainActivityPresenter = new MainActivityPresenter(getActivity(),this);
 
-        mainActivityPresenter.callListApi("ques");
+        mainActivityPresenter.callListApi("answer");
 
 
 
@@ -81,3 +96,4 @@ public class QuestionFragment extends Fragment implements MainInterface  {
 
 
 }
+

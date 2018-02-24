@@ -25,11 +25,15 @@ class QuestionListAdapter extends BaseAdapter {
 
      final Context context;
      final List<Response> items;
+    private final String type;
 
     ImageLoader imageLoader;
-    public QuestionListAdapter(Context context, List<Response> items) {
+    private String question;
+
+    public QuestionListAdapter(Context context, List<Response> items, String answer) {
         this.context = context;
         this.items = items;
+        this.type=answer;
         imageLoader = BaseApplication.getImageLoader();
     }
 
@@ -78,13 +82,15 @@ holder.frame=(FrameLayout)convertView.findViewById(R.id.frameL);
         holder.mUid.setText(questions.userId.toString());
         holder.message.setText(questions.message.toString());
 
+question= questions.message;
+
         holder.frame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Integer tag=(Integer)v.getTag();
+           //     Integer tag=(Integer)v.getTag();
 
-               // ((MainActivity) context).replaceFragmentInContainer();
+              ((MainActivity) context).replaceFragmentInContainer(AnswerFragment.TAG, AnswerFragment.newInstance(question));
             }
         });
         //holder.comments.setText(questions.comments.get(position).message.toString());

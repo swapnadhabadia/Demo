@@ -19,14 +19,14 @@ this.mainInterface=mainInterface;
     }
 
 
-    public void callListApi() {
-        mainActivityInteractor.callNetworkListApi(context,"tag");
+    public void callListApi(String answer) {
+        mainActivityInteractor.callNetworkListApi(context,answer,"tag");
 
     }
 
 
-    public void getQuesList(List<Response> response) {
-        mainInterface.getQuestionList(response);
+    public void getQuesList(List<Response> response, String type) {
+        mainInterface.getQuestionList(response,type);
     }
 
 
