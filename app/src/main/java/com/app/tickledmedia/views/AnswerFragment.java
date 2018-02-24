@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.ContentLoadingProgressBar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,7 +34,7 @@ public class AnswerFragment extends Fragment implements MainInterface {
     private View mQuestionListView;
     private ContentLoadingProgressBar mProgressBar;
     private ProgressDialog progressDialog;
-    private TextView mquestion;
+    private EditText mquestion;
     private String question;
 
 
@@ -83,9 +86,28 @@ public class AnswerFragment extends Fragment implements MainInterface {
 
         mQuestionListView = inflater.inflate(R.layout.list_question, container, false);
         mListView = (ListView) mQuestionListView.findViewById(R.id.card_listView);
-        mquestion=(TextView)mQuestionListView.findViewById(R.id.ques);
+        mquestion=(EditText)mQuestionListView.findViewById(R.id.ques);
         mquestion.setVisibility(View.VISIBLE);
         mquestion.setText(question);
+
+       /* mquestion.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+                mquestion.setText("");
+                mquestion.setText(mquestion.getText());
+            }
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+
+            }
+        });*/
+
         progressDialog = new ProgressDialog(getActivity());
         mainActivityPresenter = new MainActivityPresenter(getActivity(),this);
 
